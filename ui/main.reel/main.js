@@ -12,5 +12,13 @@ exports.Main = Component.specialize(/** @lends Main# */ {
         value: function Main() {
             this.super();
         }
+    },
+    templateDidLoad: {
+        value: function (event) {
+            this.testValue = "hi";
+        }
+    },
+    testValue: {
+        value:null
     }
 });
