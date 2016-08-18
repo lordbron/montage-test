@@ -1,1 +1,8 @@
 .Main {}
+.whiteStyle {
+    background-color : white;
+}
+
+.grayStyle {
+    background-color : #e1e1e1;
+}

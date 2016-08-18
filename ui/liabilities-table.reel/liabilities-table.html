@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="liabilities-table.css">
+    <script type="text/montage-serialization">
+    {
+        "owner": {
+            "properties": {
+                "element": {"#": "owner"}
+            }
+        },
+        "balanceLabel": {
+            "prototype": "montage/ui/text.reel",
+            "properties": {
+                "element": {"#": "balanceLabel"},
+                "value": "Balance"
+            }
+        },
+        "consolidateLabel": {
+            "prototype": "montage/ui/text.reel",
+            "properties": {
+                "element": {"#": "consolidateLabel"},
+                "value": "Consolidate"
+            }
+        },
+        "descriptionLabel": {
+            "prototype": "montage/ui/text.reel",
+            "properties": {
+                "element": {"#": "descriptionLabel"},
+                "value": "Description"
+            }
+        },
+        "liabilitiesTable": {
+            "prototype": "montage/ui/repetition.reel",
+            "properties": {
+                "element": {"#": "liabilitiesTable"},
+                "content": [
+                    {
+                        "AccountNumber": "446542491799",
+                        "Address": null,
+                        "Balance": 280,
+                        "Consolidate": null,
+                        "Description": null,
+                        "ExcludeFlag": null,
+                        "Id": null,
+                        "JointIndicator": null,
+                        "Payment": 15,
+                        "Type": "CC"
+                    },
+                    {
+                        "AccountNumber": "522278873737",
+                        "Address": null,
+                        "Balance": 592,
+                        "Consolidate": null,
+                        "Description": null,
+                        "ExcludeFlag": null,
+                        "Id": null,
+                        "JointIndicator": null,
+                        "Payment": 29,
+                        "Type": "CC"
+                    },
+                    {
+                        "AccountNumber": "600889256826",
+                        "Address": null,
+                        "Balance": 76,
+                        "Consolidate": null,
+                        "Description": null,
+                        "ExcludeFlag": null,
+                        "Id": null,
+                        "JointIndicator": null,
+                        "Payment": 25,
+                        "Type": "CH"
+                    },
+                    {
+                        "AccountNumber": "6X1X9",
+                        "Address": null,
+                        "Balance": 91,
+                        "Consolidate": null,
+                        "Description": null,
+                        "ExcludeFlag": null,
+                        "Id": null,
+                        "JointIndicator": null,
+                        "Payment": 25,
+                        "Type": "CC"
+                    },
+                    {
+                        "AccountNumber": "529144412447",
+                        "Address": null,
+                        "Balance": 5491,
+                        "Consolidate": null,
+                        "Description": null,
+                        "ExcludeFlag": null,
+                        "Id": null,
+                        "JointIndicator": null,
+                        "Payment": 118,
+                        "Type": "CC"
+                    },
+                    {
+                        "AccountNumber": "7X8X0X8X7X4X1",
+                        "Address": null,
+                        "Balance": 0,
+                        "Consolidate": null,
+                        "Description": null,
+                        "ExcludeFlag": null,
+                        "Id": null,
+                        "JointIndicator": null,
+                        "Payment": 835,
+                        "Type": "FR"
+                    },
+                    {
+                        "AccountNumber": "441716666654",
+                        "Address": null,
+                        "Balance": 0,
+                        "Consolidate": null,
+                        "Description": null,
+                        "ExcludeFlag": null,
+                        "Id": null,
+                        "JointIndicator": null,
+                        "Payment": 0,
+                        "Type": "CC"
+                    },
+                    {
+                        "AccountNumber": "1X3X0X0X1X",
+                        "Address": null,
+                        "Balance": 0,
+                        "Consolidate": null,
+                        "Description": null,
+                        "ExcludeFlag": null,
+                        "Id": null,
+                        "JointIndicator": null,
+                        "Payment": 0,
+                        "Type": "FR"
+                    },
+                    {
+                        "AccountNumber": "4X6X0",
+                        "Address": null,
+                        "Balance": 0,
+                        "Consolidate": null,
+                        "Description": null,
+                        "ExcludeFlag": null,
+                        "Id": null,
+                        "JointIndicator": null,
+                        "Payment": 0,
+                        "Type": "CC"
+                    }
+                ]
+            }
+        },
+        "liabilitiesTableItem1": {
+            "prototype": "ui/liabilities-table-item.reel",
+            "properties": {
+                "element": {"#": "liabilitiesTableItem1"}
+            },
+            "bindings": {
+                "itemData": {"<->": "@liabilitiesTable:iteration.object"}
+            }
+        },
+        "ownerLabel": {
+            "prototype": "montage/ui/text.reel",
+            "properties": {
+                "element": {"#": "ownerLabel"},
+                "value": "Owner"
+            }
+        },
+        "paymentLabel": {
+            "prototype": "montage/ui/text.reel",
+            "properties": {
+                "element": {"#": "paymentLabel"},
+                "value": "Payment"
+            }
+        },
+        "typeLabel": {
+            "prototype": "montage/ui/text.reel",
+            "properties": {
+                "element": {"#": "typeLabel"},
+                "value": "Type"
+            },
+            "listeners": [
+                {
+                    "type": "click",
+                    "useCapture": false,
+                    "listener": {"@": "owner"}
+                }
+            ]
+        }
+    }
+    </script>
+</head>
+<body>
+    <div data-montage-id="owner" class="LiabilitiesTable">
+        <div>
+            <div style="display:inline-block;width:40px;"></div>
+            <p data-montage-id="typeLabel" style="display:inline-block;width:170px"></p>
+            <p data-montage-id="descriptionLabel" style="display:inline-block;width:170px"></p>
+            <p data-montage-id="balanceLabel" style="display:inline-block;width:170px"></p>
+            <p data-montage-id="paymentLabel" style="display:inline-block;width:170px"></p>
+            <p data-montage-id="ownerLabel" style="display:inline-block;width:170px"></p>
+            <p data-montage-id="consolidateLabel" style="display:inline-block;width:170px"></p>
+        </div>
+        <ul data-montage-id="liabilitiesTable">
+            <li data-montage-id="liabilitiesTableItem1"></li>
+        </ul>
+    </div>
+</body>
+</html>

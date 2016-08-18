@@ -11,6 +11,89 @@
         "owner": {
             "properties": {
                 "element": {"#": "main"}
+            },
+            "bindings": {
+                "backgroundCheck": {"<-": "@textField3.value"}
+            }
+        },
+        "condition": {
+            "prototype": "montage/ui/condition.reel",
+            "properties": {
+                "element": {"#": "condition"},
+                "condition": false,
+                "removalStrategy": "remove"
+            }
+        },
+        "dater": {
+            "prototype": "core/dater"
+        },
+        "dropDown": {
+            "prototype": "core/drop-down",
+            "bindings": {
+                "content": {"<-": "@select.content"}
+            }
+        },
+        "overlay": {
+            "prototype": "montage/ui/overlay.reel",
+            "properties": {
+                "element": {"#": "overlay"}
+            }
+        },
+        "ownRadio": {
+            "prototype": "digit/ui/radio-button.reel",
+            "properties": {
+                "element": {"#": "ownRadio"},
+                "checked": false,
+                "radioButtonController": {"@": "radioButtonController"},
+                "value": "own"
+            }
+        },
+        "radioButtonController": {
+            "prototype": "montage/core/radio-button-controller",
+            "bindings": {
+                "value": {"<->": "@textField4.value", "converter": {"@": "radioButtons"}}
+            }
+        },
+        "radioButtons": {
+            "prototype": "core/radio-buttons"
+        },
+        "rentRadio": {
+            "prototype": "digit/ui/radio-button.reel",
+            "properties": {
+                "element": {"#": "rentRadio"},
+                "checked": false,
+                "radioButtonController": {"@": "radioButtonController"},
+                "value": "rent"
+            }
+        },
+        "select": {
+            "prototype": "digit/ui/select.reel",
+            "properties": {
+                "element": {"#": "select"},
+                "content": [
+                    {
+                        "label": "Select Loan Purpose",
+                        "code": "Select"
+                    },
+                    {
+                        "label": "Debt Consolidation",
+                        "code": "Debt Consolidation"
+                    },
+                    {
+                        "label": "Other",
+                        "code": "Other"
+                    }
+                ]
+            },
+            "bindings": {
+                "value": {"<->": "@textField3.value", "converter": {"@": "dropDown"}}
+            }
+        },
+        "text2": {
+            "prototype": "montage/ui/text.reel",
+            "properties": {
+                "element": {"#": "text2"},
+                "value": "Add Note"
             }
         },
         "textField": {
@@ -19,22 +102,61 @@
                 "element": {"#": "textField"}
             },
             "bindings": {
-                "value": {"<-": "@owner.testValue"},
-                "converter": {"@": "dater"}
+                "value": {"<->": "@textField2.value", "converter": {"@": "dater"}}
             }
-        },
-        "dater": {
-            "prototype": "core/dater"
         },
         "textField2": {
             "prototype": "montage/ui/text-field.reel",
             "properties": {
-                "element": {"#": "textField2"},
-                "value": "TextField2"
-            },
-            "bindings": {
-                "value": {"<-": "@textField.value"},
-                "converter": {"@": "dater"}
+                "element": {"#": "textField2"}
+            }
+        },
+        "textField3": {
+            "prototype": "montage/ui/text-field.reel",
+            "properties": {
+                "element": {"#": "textField3"},
+                "value": "Other"
+            }
+        },
+        "textField4": {
+            "prototype": "montage/ui/text-field.reel",
+            "properties": {
+                "element": {"#": "textField4"}
+            }
+        },
+        "textField5": {
+            "prototype": "montage/ui/text-field.reel",
+            "properties": {
+                "element": {"#": "textField5"},
+                "placeholder": "###-##-####"
+            }
+        },
+        "textField6": {
+            "prototype": "montage/ui/text-field.reel",
+            "properties": {
+                "element": {"#": "textField6"},
+                "placeholder": "###-###-####"
+            }
+        },
+        "textField7": {
+            "prototype": "montage/ui/text-field.reel",
+            "properties": {
+                "element": {"#": "textField7"},
+                "placeholder": "YYYY-MM-DD"
+            }
+        },
+        "textField8": {
+            "prototype": "montage/ui/text-field.reel",
+            "properties": {
+                "element": {"#": "textField8"},
+                "placeholder": "YY/MM"
+            }
+        },
+        "textField9": {
+            "prototype": "montage/ui/text-field.reel",
+            "properties": {
+                "element": {"#": "textField9"},
+                "placeholder": "$"
             }
         }
     }
@@ -42,8 +164,27 @@
 </head>
 <body>
     <div data-montage-id="main" data-montage-skin="light" class="Main">
-        <input data-montage-id="textField" type="text">
-        <input data-montage-id="textField2" type="text">
+        <div data-montage-id="condition">
+            <input data-montage-id="textField" type="text">
+            <input data-montage-id="textField2" type="text">
+            <br>
+            <select data-montage-id="select">
+
+            </select>
+            <input data-montage-id="textField3" type="text">
+            <br>
+            <input data-montage-id="textField4" type="text">
+            <input type="radio" data-montage-id="ownRadio">
+            <input type="radio" data-montage-id="rentRadio">
+            <input data-montage-id="textField5" type="text">
+            <input data-montage-id="textField6" type="text">
+            <input data-montage-id="textField7" type="text">
+            <input data-montage-id="textField8" type="text">
+            <input data-montage-id="textField9" type="text">
+        </div>
+        <div data-montage-id="overlay">
+            <p data-montage-id="text2" class="selected-nav-item"></p>
+        </div>
     </div>
 </body>
 </html>

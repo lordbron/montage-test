@@ -14,3 +14,15 @@ html {
 body {
     margin: 0; /* Remove default margin */
 }
+.selected-nav-item {
+    background-color:#00457c;
+    color: #286fb9;
+}
+
+.pop-up {
+    width:50px
+}
+
+.validation-error {
+    background-color: #F77C7C;
+}

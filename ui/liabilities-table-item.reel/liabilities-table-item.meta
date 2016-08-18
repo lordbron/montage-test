@@ -10,21 +10,31 @@
       }
     }
   },
+  "blueprint_unnamed_itemData": {
+    "prototype": "montage/core/meta/property-blueprint",
+    "properties": {
+      "name": "itemData",
+      "blueprint": {"@": "root"},
+      "valueType": "object"
+    }
+  },
   "root": {
     "prototype": "montage/core/meta/module-blueprint",
     "properties": {
       "name": null,
-      "blueprintModule": {
-        "%": "ui/main.reel/main.meta"
-      },
       "parent": {"@": "blueprint_component_reference"},
+      "propertyBlueprints": [
+        {"@": "blueprint_unnamed_itemData"}
+      ],
       "propertyBlueprintGroups": {
-        "Main": []
+        "LiabilitiesTableItem": [
+          {"@": "blueprint_unnamed_itemData"}
+        ]
       },
       "module": {
-        "%": "ui/main.reel"
+        "%": "ui/liabilities-table-item.reel"
       },
-      "exportName": "Main"
+      "exportName": "LiabilitiesTableItem"
     }
   }
 }

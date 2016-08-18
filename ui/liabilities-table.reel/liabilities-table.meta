@@ -15,16 +15,16 @@
     "properties": {
       "name": null,
       "blueprintModule": {
-        "%": "ui/main.reel/main.meta"
+        "%": "ui/liabilities-table.reel/liabilities-table.meta"
       },
       "parent": {"@": "blueprint_component_reference"},
       "propertyBlueprintGroups": {
-        "Main": []
+        "LiabilitiesTable": []
       },
       "module": {
-        "%": "ui/main.reel"
+        "%": "ui/liabilities-table.reel"
       },
-      "exportName": "Main"
+      "exportName": "LiabilitiesTable"
     }
   }
 }

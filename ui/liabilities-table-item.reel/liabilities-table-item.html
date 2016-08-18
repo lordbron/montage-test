@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="liabilities-table-item.css">
+    <script type="text/montage-serialization">
+    {
+        "owner": {
+            "properties": {
+                "element": {"#": "owner"}
+            }
+        },
+        "accountNumberLabel": {
+            "prototype": "montage/ui/text.reel",
+            "properties": {
+                "element": {"#": "accountNumberLabel"},
+                "value": "Account Number:"
+            }
+        },
+        "accountNumberTextField": {
+            "prototype": "montage/ui/text-field.reel",
+            "properties": {
+                "element": {"#": "accountNumberTextField"}
+            },
+            "bindings": {
+                "value": {"<->": "@owner.itemData.AccountNumber"}
+            }
+        },
+        "balanceTextField": {
+            "prototype": "montage/ui/text-field.reel",
+            "properties": {
+                "element": {"#": "balanceTextField"}
+            },
+            "bindings": {
+                "value": {"<->": "@owner.itemData.Balance"}
+            }
+        },
+        "cityTextField": {
+            "prototype": "montage/ui/text-field.reel",
+            "properties": {
+                "element": {"#": "cityTextField"}
+            }
+        },
+        "condition": {
+            "prototype": "montage/ui/condition.reel",
+            "properties": {
+                "element": {"#": "condition"},
+                "removalStrategy": "remove"
+            }
+        },
+        "consolidateCheckBox": {
+            "prototype": "montage/ui/checkbox.reel",
+            "properties": {
+                "element": {"#": "consolidateCheckBox"},
+                "checked": true
+            },
+            "bindings": {
+                "checked": {"<->": "@owner.itemData.Consolidate"}
+            }
+        },
+        "descriptionTextField": {
+            "prototype": "montage/ui/text-field.reel",
+            "properties": {
+                "element": {"#": "descriptionTextField"}
+            },
+            "bindings": {
+                "value": {"<->": "@owner.itemData.Description"}
+            }
+        },
+        "detailsButton": {
+            "prototype": "montage/ui/button.reel",
+            "properties": {
+                "element": {"#": "detailsButton"},
+                "formenctype": "application/x-www-form-urlencoded",
+                "formmethod": "get",
+                "label": "Details"
+            },
+            "listeners": [
+                {
+                    "type": "action",
+                    "useCapture": false,
+                    "listener": {"@": "owner"}
+                }
+            ]
+        },
+        "mailCheckCheckBox": {
+            "prototype": "montage/ui/checkbox.reel",
+            "properties": {
+                "element": {"#": "mailCheckCheckBox"},
+                "checked": true
+            }
+        },
+        "mailCheckLabel": {
+            "prototype": "montage/ui/text.reel",
+            "properties": {
+                "element": {"#": "mailCheckLabel"},
+                "value": "Mail Check?"
+            }
+        },
+        "ownTextField": {
+            "prototype": "montage/ui/text-field.reel",
+            "properties": {
+                "element": {"#": "ownTextField"}
+            },
+            "bindings": {
+                "value": {"<->": "@owner.itemData.JointIndicator"}
+            }
+        },
+        "paymentTextField": {
+            "prototype": "montage/ui/text-field.reel",
+            "properties": {
+                "element": {"#": "paymentTextField"}
+            },
+            "bindings": {
+                "value": {"<->": "@owner.itemData.Payment"}
+            }
+        },
+        "stateTextField": {
+            "prototype": "montage/ui/text-field.reel",
+            "properties": {
+                "element": {"#": "stateTextField"}
+            }
+        },
+        "streetAddress1TextField": {
+            "prototype": "montage/ui/text-field.reel",
+            "properties": {
+                "element": {"#": "streetAddress1TextField"}
+            }
+        },
+        "streetAddress2TextField": {
+            "prototype": "montage/ui/text-field.reel",
+            "properties": {
+                "element": {"#": "streetAddress2TextField"}
+            }
+        },
+        "typeTextField": {
+            "prototype": "montage/ui/text-field.reel",
+            "properties": {
+                "element": {"#": "typeTextField"}
+            },
+            "bindings": {
+                "Type": {"<->": "@owner.itemData.Type"}
+            }
+        },
+        "zipTextField": {
+            "prototype": "montage/ui/text-field.reel",
+            "properties": {
+                "element": {"#": "zipTextField"}
+            }
+        }
+    }
+    </script>
+</head>
+<body>
+    <div data-montage-id="owner" class="LiabilitiesTableItem">
+        <div>
+            <input data-montage-id="typeTextField" type="text">
+            <input data-montage-id="descriptionTextField" type="text">
+            <input data-montage-id="balanceTextField" type="text">
+            <input data-montage-id="paymentTextField" type="text">
+            <input data-montage-id="ownTextField" type="text">
+            <input type="checkbox" data-montage-id="consolidateCheckBox">
+            <button data-montage-id="detailsButton"></button>
+        </div>
+        <div data-montage-id="condition">
+            <div>
+                <div>
+                    <input data-montage-id="streetAddress1TextField" type="text">
+                    <input data-montage-id="streetAddress2TextField" type="text">
+                    <input data-montage-id="cityTextField" type="text">
+                    <input data-montage-id="stateTextField" type="text">
+                    <input data-montage-id="zipTextField" type="text">
+                </div>
+                <div>
+                    <p data-montage-id="accountNumberLabel" style="display:inline-block"></p>
+                    <input data-montage-id="accountNumberTextField" type="text">
+                    <p data-montage-id="mailCheckLabel" style="display:inline-block"></p>
+                    <input type="checkbox" data-montage-id="mailCheckCheckBox">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
