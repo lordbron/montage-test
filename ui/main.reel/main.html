@@ -5,15 +5,12 @@
     <title>
         Main
     </title>
-    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="https://work.montagestudio.com/app/18f5892740bf723b3964bf7092ad97d891f9e346/main.css">
     <script type="text/montage-serialization">
     {
         "owner": {
             "properties": {
                 "element": {"#": "main"}
-            },
-            "bindings": {
-                "backgroundCheck": {"<-": "@textField3.value"}
             }
         },
         "condition": {
@@ -28,10 +25,7 @@
             "prototype": "core/dater"
         },
         "dropDown": {
-            "prototype": "core/drop-down",
-            "bindings": {
-                "content": {"<-": "@select.content"}
-            }
+            "prototype": "core/drop-down"
         },
         "overlay": {
             "prototype": "montage/ui/overlay.reel",
@@ -49,13 +43,20 @@
             }
         },
         "radioButtonController": {
-            "prototype": "montage/core/radio-button-controller",
-            "bindings": {
-                "value": {"<->": "@textField4.value", "converter": {"@": "radioButtons"}}
-            }
+            "prototype": "montage/core/radio-button-controller"
         },
         "radioButtons": {
             "prototype": "core/radio-buttons"
+        },
+        "rangeController": {
+            "prototype": "montage/core/range-controller",
+            "properties": {
+                "content": [
+                    {"quote": "one"},
+                    {"quote": "two"}
+                ],
+                "multiSelect": true
+            }
         },
         "rentRadio": {
             "prototype": "digit/ui/radio-button.reel",
@@ -64,6 +65,14 @@
                 "checked": false,
                 "radioButtonController": {"@": "radioButtonController"},
                 "value": "rent"
+            }
+        },
+        "repetition": {
+            "prototype": "montage/ui/repetition.reel",
+            "properties": {
+                "element": {"#": "repetition"},
+                "contentController": {"@": "rangeController"},
+                "isSelectionEnabled": true
             }
         },
         "select": {
@@ -84,9 +93,12 @@
                         "code": "Other"
                     }
                 ]
-            },
-            "bindings": {
-                "value": {"<->": "@textField3.value", "converter": {"@": "dropDown"}}
+            }
+        },
+        "tableLiabilities": {
+            "prototype": "ui/liabilities-table.reel",
+            "properties": {
+                "element": {"#": "tableLiabilities"}
             }
         },
         "text2": {
@@ -100,9 +112,6 @@
             "prototype": "montage/ui/text-field.reel",
             "properties": {
                 "element": {"#": "textField"}
-            },
-            "bindings": {
-                "value": {"<->": "@textField2.value", "converter": {"@": "dater"}}
             }
         },
         "textField2": {
@@ -158,6 +167,15 @@
                 "element": {"#": "textField9"},
                 "placeholder": "$"
             }
+        },
+        "textTableItem": {
+            "prototype": "montage/ui/text.reel",
+            "properties": {
+                "element": {"#": "textTableItem"}
+            },
+            "bindings": {
+                "value": {"<-": "@repetition:iteration.object.quote"}
+            }
         }
     }
     </script>
@@ -184,6 +202,12 @@
         </div>
         <div data-montage-id="overlay">
             <p data-montage-id="text2" class="selected-nav-item"></p>
+        </div>
+        <ul data-montage-id="repetition">
+            <li data-montage-id="textTableItem"></li>
+        </ul>
+        <div data-montage-id="tableLiabilities">
+
         </div>
     </div>
 </body>

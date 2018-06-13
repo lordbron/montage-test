@@ -26,3 +26,7 @@ body {
 .validation-error {
     background-color: #F77C7C;
 }
+
+.selected {
+    background-color:#d5eafb;
+}

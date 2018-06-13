@@ -152,6 +152,7 @@ exports.Main = Component.specialize(/** @lends Main# */ {
     
     enterDocument: {
         value: function (firstTime) {
+            this.templateObjects.repetition.selection = ["two"]
             if (document.addEventListener) {
                 var me = this;
                 document.addEventListener('contextmenu', function(e) {

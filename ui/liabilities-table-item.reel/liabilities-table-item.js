@@ -8,6 +8,9 @@ var Component = require("montage/ui/component").Component;
  * @extends Component
  */
 exports.LiabilitiesTableItem = Component.specialize(/** @lends LiabilitiesTableItem# */ {
+    itemData: {
+        value: null
+    },
     templateDidLoad: {
         value: function (event) {
             this.templateObjects.condition.condition = false;

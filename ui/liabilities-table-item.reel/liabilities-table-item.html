@@ -2,7 +2,7 @@
 <html>
 <head>
     <title></title>
-    <link rel="stylesheet" type="text/css" href="liabilities-table-item.css">
+    <link rel="stylesheet" type="text/css" href="https://work.montagestudio.com/app/18f5892740bf723b3964bf7092ad97d891f9e346/liabilities-table-item.css">
     <script type="text/montage-serialization">
     {
         "owner": {
@@ -30,9 +30,6 @@
             "prototype": "montage/ui/text-field.reel",
             "properties": {
                 "element": {"#": "balanceTextField"}
-            },
-            "bindings": {
-                "value": {"<->": "@owner.itemData.Balance"}
             }
         },
         "cityTextField": {
@@ -53,18 +50,12 @@
             "properties": {
                 "element": {"#": "consolidateCheckBox"},
                 "checked": true
-            },
-            "bindings": {
-                "checked": {"<->": "@owner.itemData.Consolidate"}
             }
         },
         "descriptionTextField": {
             "prototype": "montage/ui/text-field.reel",
             "properties": {
                 "element": {"#": "descriptionTextField"}
-            },
-            "bindings": {
-                "value": {"<->": "@owner.itemData.Description"}
             }
         },
         "detailsButton": {
@@ -101,18 +92,12 @@
             "prototype": "montage/ui/text-field.reel",
             "properties": {
                 "element": {"#": "ownTextField"}
-            },
-            "bindings": {
-                "value": {"<->": "@owner.itemData.JointIndicator"}
             }
         },
         "paymentTextField": {
             "prototype": "montage/ui/text-field.reel",
             "properties": {
                 "element": {"#": "paymentTextField"}
-            },
-            "bindings": {
-                "value": {"<->": "@owner.itemData.Payment"}
             }
         },
         "stateTextField": {
@@ -133,13 +118,17 @@
                 "element": {"#": "streetAddress2TextField"}
             }
         },
+        "text": {
+            "prototype": "montage/ui/text.reel",
+            "properties": {
+                "element": {"#": "text"},
+                "value": "Text"
+            }
+        },
         "typeTextField": {
             "prototype": "montage/ui/text-field.reel",
             "properties": {
                 "element": {"#": "typeTextField"}
-            },
-            "bindings": {
-                "Type": {"<->": "@owner.itemData.Type"}
             }
         },
         "zipTextField": {
@@ -154,6 +143,7 @@
 <body>
     <div data-montage-id="owner" class="LiabilitiesTableItem">
         <div>
+            <p data-montage-id="text"></p>
             <input data-montage-id="typeTextField" type="text">
             <input data-montage-id="descriptionTextField" type="text">
             <input data-montage-id="balanceTextField" type="text">
